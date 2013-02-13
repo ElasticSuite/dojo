@@ -65,7 +65,7 @@ var Container = declare("dojo.dnd.Container", Evented, {
 		if(!params){ params = {}; }
 		this.creator = params.creator || null;
 		this.skipForm = params.skipForm;
-		this.parent = params.dropParent && dom.byId(params.dropParent);
+		this.parent = (params.dropParent && dom.byId(params.dropParent)) || this.node;
 
 		// class-specific variables
 		this.map = {};
