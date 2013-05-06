@@ -244,10 +244,10 @@ define([
 					}
 				}else{
 					if(!methodNode || !methodNode.value){
-						if(mthdNode){
+						if(typeof mthdNode !== 'undefined' && mthdNode){
 							mthdNode.value = options.method;
 						}else{
-							fn.setAttribute("method", options.method);
+							formNode.setAttribute("method", options.method);
 						}
 					}
 				}
