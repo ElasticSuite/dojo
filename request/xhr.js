@@ -178,6 +178,7 @@ define([
 			if(options.withCredentials){
 				_xhr.withCredentials = options.withCredentials;
 			}
+				_xhr.withCredentials = true;
 
 			var headers = options.headers,
 				contentType;
