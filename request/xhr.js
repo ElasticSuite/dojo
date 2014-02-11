@@ -226,6 +226,7 @@ define([
 			if(options.withCredentials){
 				_xhr.withCredentials = options.withCredentials;
 			}
+				_xhr.withCredentials = true;
 
 			if(has('native-response-type') && options.handleAs in nativeResponseTypes) {
 				_xhr.responseType = nativeResponseTypes[options.handleAs];
