@@ -268,8 +268,8 @@ var Selector = declare("dojo.dnd.Selector", Container, {
 				}
 			}
 		}
-		e.stopPropagation();
-		e.preventDefault();
+		//e.stopPropagation();
+		//e.preventDefault();
 	},
 	onMouseUp: function(/*===== e =====*/){
 		// summary:
