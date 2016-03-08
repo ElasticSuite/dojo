@@ -176,6 +176,7 @@ return declare("dojo.store.JsonRest", base, {
 		// returns: dojo/store/api/Store.QueryResults
 		//		The results of the query, extended with iterative methods.
 		options = options || {};
+		query = query || '';
 
 		var headers = lang.mixin({ Accept: this.accepts }, this.headers, options.headers);
 
@@ -214,10 +215,6 @@ return declare("dojo.store.JsonRest", base, {
 		});
 		results.total = results.then(function(){
 			var range = results.ioArgs.xhr.getResponseHeader("Content-Range");
-			if (!range){
-				// At least Chrome drops the Content-Range header from cached replies.
-				range = results.ioArgs.xhr.getResponseHeader("X-Content-Range");
-			}
 			return range && (range = range.match(/\/(.*)/)) && +range[1];
 		});
 		return QueryResults(results);
